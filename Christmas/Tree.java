@@ -9,8 +9,8 @@
 public class Tree
 {
     
-    private int height;
-    private int width;
+    protected int height;
+    protected int width;
     
     public Tree(int height)
     {
@@ -22,7 +22,7 @@ public class Tree
         }
     }
     
-    public void draw(){
+    public void drawTree(){
         String[] layers = new String[width];
         for(int i = 0; i < height/2; i++){
             layers[(layers.length/2)+i] = "*";
@@ -36,6 +36,10 @@ public class Tree
             }
             System.out.println();
         }
+        drawStump();
+    }
+    
+    public void drawStump(){
         String[] stump = new String[width];
         stump[stump.length/2] = "*";
         output(stump);
